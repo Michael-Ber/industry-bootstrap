@@ -1,0 +1,115 @@
+.infra {
+    margin-top: 200px;
+
+    @media(max-width: $breakpoint-991) {
+        margin-top: 110px;
+    }
+
+    &__wrapper {
+        position: relative;
+        margin-top: 100px;
+        min-height: 495px;
+
+        @media(max-width: $breakpoint-575) {
+            margin-top: 70px;
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $main-color;
+        clip-path: polygon(0% 0%, 93% 0%, 100% 50%, 92% 108%, 0% 100%, 0% 50%);
+
+        @media(max-width: $breakpoint-991) {
+            clip-path: unset;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(300px, 413px));
+        grid-template-rows: repeat(2, minmax(143px, 1fr));
+        grid-auto-rows: minmax(143px, 1fr);
+        justify-content: center;
+        row-gap: 30px;
+        column-gap: 20px;
+        padding: 55px 75px 125px 60px;
+
+
+        @media(max-width: $breakpoint-1199) {
+            grid-template-columns: repeat(2, minmax(300px, 413px));
+        }
+
+        @media(max-width: $breakpoint-767) {
+            grid-template-columns: repeat(1, minmax(300px, 413px));
+        }
+    }
+
+    &__schema {
+        position: relative;
+        width: 100%;
+
+        @media(max-width: $breakpoint-575) {
+            clip-path: unset;
+        }
+    }
+
+    &__schema-img {
+        @include adaptiv-maxwidth(413, 280);
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+
+
+
+
+
+}
+
+.card-infra {
+    background-color: $white;
+    box-shadow: 16px 16px 48px 0 rgba(#000, .1);
+    padding: 25px 25px 25px 42px;
+    clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__metric,
+    &__descr {
+        display: block;
+    }
+
+    &__metric {
+        @include adaptiv-font(22, 16);
+        font-weight: 900;
+    }
+
+    &__descr {
+        @include adaptiv-font(14, 12);
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 5px;
+    }
+
+    &__text {
+        @include adaptiv-font(12, 11);
+        font-weight: 400;
+        margin-top: 5px;
+    }
+}

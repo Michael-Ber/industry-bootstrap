@@ -1,0 +1,137 @@
+@import '../var/variables';
+
+.park {
+    position: relative;
+    margin-top: 120px;
+
+    @media(max-width: $breakpoint-767) {
+        margin-top: 60px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        margin-bottom: 215px;
+
+        @media(max-width: $breakpoint-767) {
+            margin-bottom: 80px;
+        }
+    }
+
+    &__billet {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 16px 16px 48px 0 rgba(#000, .1);
+        padding: 20px 0;
+        
+        &:nth-child(1) {
+            top: -112px;
+            left: 0px;
+            z-index: 8;
+        }
+
+        &:nth-child(2) {
+            top: 60px;
+            left: 80px;
+            z-index: 9;
+
+            @media(max-width: $breakpoint-991) {
+                left: 60px;
+            }
+        }
+
+        &:nth-child(3) {
+            top: 230px;
+            left: 180px;
+            z-index: 10;
+
+            @media(max-width: $breakpoint-991) {
+                left: 130px;
+            }
+        }
+
+        @media(max-width: $breakpoint-767) {
+            position: relative;
+            width: 50% !important;
+            top: unset !important;
+            left: unset !important;
+        }
+        @media(max-width: $breakpoint-575) {
+            width: 100% !important;
+        }
+    }
+
+    &__billet-white {
+        width: calc(100%/3 - 13px);
+        min-height: 200px;
+        background-color: $white;
+        .billet-park {
+            &__text {
+                @include adaptiv-font(15, 11);
+                font-weight: 500;
+                color: $black;
+                width: min(80%, 550px);
+            }
+        }
+    }
+
+    &__billet-green {
+        width: min(710px, 60%);
+        min-height: 225px;
+        background-color: $main-color;
+        clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%, 0% 50%);
+
+        @media(max-width: $breakpoint-767) {
+            clip-path: unset;
+        }
+
+        .billet-park__text {
+            @include adaptiv-font(16, 12);
+            color: $white;
+            font-weight: 700;
+            width: min(80%, 550px);
+        }
+    }
+
+
+    &__map-wrapper {
+        min-width: 100%;
+        min-height: 634px;
+    }
+
+    &__map {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        iframe {
+            align-content: start;
+            border: none;
+        }
+    }
+
+    &__mark {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        width: 65px;
+        height: 94px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    
+}

@@ -1,0 +1,159 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    z-index: -1;
+    opacity: 0;
+    transition: .3s opacity ease;
+    overflow-y: auto;
+    overflow-x: hidden;
+    &_active {
+        background-color: rgba(#000, .7);
+        opacity: 1;
+        z-index: 100;
+    }
+    &__wrapper {
+        @include calc-width-min(10);
+        position: relative;
+        min-height: 90%;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(#000, .3);
+        padding: 70px 0 200px 0;
+        background-color: $white;
+        margin: 50px 0;
+        @media(max-width:$breakpoint-991) {
+            padding: 50px 0 50px 0;
+        }
+        
+    }
+    &__subwrapper {
+        @include calc-width-min(8);
+        
+    }
+
+    &__title {
+        @include adaptiv-font(64, 24);
+        font-family: 'Bebas Neue';
+        font-weight: 900;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    &__form {
+        margin-top: 70px;
+    }
+    &__close {
+        position: absolute;
+        top: 35px;
+        right: 35px;
+        font-size: 24px;
+        cursor: pointer;
+        @media(max-width:$breakpoint-767) {
+            top: 20px;
+            right: 20px;
+        }
+    }
+
+}
+.form-modal {
+    form {
+        // @include grid-template-columns(4, 2);
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - 20px));
+        justify-content: space-between;
+        gap: 20px;
+        @media(max-width: $breakpoint-991) {
+            grid-template-columns: 100%;
+        }
+    }
+
+    &__label {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    &__input {
+        @include adaptiv-minheight(50, 30);
+        width: 100%;
+        // min-height: 50px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+        box-shadow: 16px 16px 48px rgba(#000, .1);
+        outline: none;
+        padding: 0 20px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    &__label-checkbox {
+        @include calc-width(5);
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-size: 11px;
+        @media(max-width: $breakpoint-1299) {
+            width: 100%;
+        }
+    }
+    &__checkbox {
+        position: relative;
+        appearance: none;
+        cursor: pointer;
+        
+        &::before {
+            @include adaptiv-width(30, 20);
+            @include adaptiv-height(30, 20);
+            content: '';
+            display: block;
+            border-radius: 3px;
+            border: 1px solid $main-color;
+            // position: absolute;
+            top: 0;
+            left: 0;
+        }
+        &:checked {
+            &::after {
+               content: url('./assets/icons/check.svg');
+               width: 16px;
+               height: 12px;
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%); 
+            }
+        }
+    }
+
+    &__privacy {
+        text-decoration: underline;
+    }
+
+    &__submit {
+        @include calc-width-min(2);
+        @include adaptiv-minheight(50, 30);
+        font-family: 'Montserrat';
+        justify-self: flex-end;
+        font-size: 12px;
+        font-weight: 500;
+        color: $white;
+        background-color: $main-color;
+        border-radius: 3px;
+        border: none;
+        transition: .3s all ease;
+        cursor: pointer;
+        &:hover {
+            background-color: darken($main-color, 10%);
+        }
+        @media(max-width:$breakpoint-991) {
+            justify-self: center;
+        }
+    }
+}
+

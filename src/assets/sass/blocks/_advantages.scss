@@ -1,0 +1,118 @@
+@import '../var/variables';
+
+.advantages {
+    margin-top: 200px;
+
+    @media(max-width: $breakpoint-991) {
+        margin-top: 110px;
+    }
+    &__wrapper {
+        position: relative;
+        margin-top: 105px;
+        @media(max-width: $breakpoint-575) {
+            margin-top: 50px;
+        }
+    }
+
+    &__bg {
+        top: 105px;
+        left: 0;
+
+        @media(max-width: $breakpoint-1299) {
+            height: 93% !important;
+        }
+        @media(max-width: $breakpoint-767) {
+            clip-path: unset !important;
+        }
+        @media(max-width: $breakpoint-575) {
+            height: 95% !important;
+        }
+    }
+    &__grid {
+        // position: relative;
+        align-items: stretch;
+        justify-content: center;
+        
+        // display: grid;
+        // grid-template-columns: repeat(auto-fill, minmax(200px, 305px));
+        
+
+        // @media(max-width: $breakpoint-1299) {
+        //     grid-template-columns: repeat(3, minmax(200px, 305px));
+        // }
+
+        // @media(max-width: $breakpoint-991) {
+        //     grid-template-columns: repeat(2, minmax(200px, 305px));
+        // }
+
+        // @media(max-width: $breakpoint-767) {
+        //     padding: 0 20px;
+        // }
+
+        // @media(max-width: $breakpoint-575) {
+        //     grid-template-columns: repeat(1, minmax(200px, 305px));
+        // }
+    }
+}
+
+.card-advantages {
+    height: 100%;
+    min-height: 445px;
+    box-shadow: 16px 16px 45px 0 rgba(#000, .1);
+    background-color: $white;
+    @media(max-width: $breakpoint-575) {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    
+    &__top {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $main-color;
+        min-height: 105px;
+        border-radius: 3px;
+    }
+
+    &__content {
+        padding: 15px 50px 20px 30px;
+        background-color: $white;
+        line-height: 16px;
+    }
+
+    &__title {
+        @include adaptiv-font(20, 16);
+        font-weight: 900;
+        // width: min(200px, 80%);
+    }
+
+    &__list {
+        @include adaptiv-font(14, 12);
+        margin-top: 20px;
+        list-style-type: disc;
+        padding-left: 25px;
+        font-weight: 400;
+        color: $gray;
+    }
+
+    &__descr {
+        // width: min(217px, 100%);
+        margin-top: 20px;
+        font-size: 12px;
+        font-weight: 400;
+        color: $gray;
+    }
+
+}
+
+.advantages-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+    @media(max-width: $breakpoint-767) {
+        padding-bottom: 20px;
+    }
+}
+

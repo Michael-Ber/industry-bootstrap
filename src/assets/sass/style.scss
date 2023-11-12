@@ -1,0 +1,354 @@
+@import './libs/fonts';
+@import './blocks/header';
+@import './blocks/intro';
+@import './var/variables';
+@import './blocks/park';
+@import './blocks/advantages';
+@import './blocks/infra';
+@import './blocks/services';
+@import './blocks/conditions';
+@import './blocks/support';
+@import './blocks/schema';
+@import './blocks/resident';
+@import './blocks/users';
+@import './blocks/footer';
+@import './blocks/modal';
+
+
+
+//COMMON
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Montserrat';
+    color: $gray;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+}
+
+//END COMMON
+
+//CONTAINERS
+
+.container-outer {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.container {
+    @media(max-width: $breakpoint-991) {
+        max-width: 100%;
+        padding: 0 30px;
+    }
+    @media(max-width: $breakpoint-575) {
+        padding: 0 10px;
+    }
+}
+
+//END CONTAINERS
+
+//BUTTON
+
+.btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__subwrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
+
+        &_297 {
+            @include adaptiv-width(297, 150);
+            @include adaptiv-height(49, 30);
+        }
+
+        &_414 {
+            @include adaptiv-width(414, 150);
+            @include adaptiv-height(68, 40);
+        }
+
+    }
+
+    &__common {
+        width: 100%;
+        height: 100%;
+        text-transform: uppercase;
+        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
+        border: none;
+        transition: .3s all ease;
+        cursor: pointer;
+
+        &_green {
+            @include adaptiv-font(20, 11);
+            background-color: $main-color;
+            color: $white;
+
+            &:hover {
+                background-color: darken($main-color, 10%);
+
+                &+.btn-wrapper__background {
+                    background-color: darken($white, 10%);
+                }
+            }
+        }
+
+        &_white {
+            @include adaptiv-font(18, 11);
+            background-color: $white;
+            color: $main-color;
+
+            &:hover {
+                background-color: darken($white, 10%);
+
+                &+.btn-wrapper__background {
+                    background-color: darken($main-color, 10%);
+                }
+            }
+        }
+    }
+
+    &__background {
+        position: absolute;
+        top: 5px;
+        left: -10px;
+        width: 297px;
+        height: 49px;
+        clip-path: polygon(5% 0, 100% 0, 100% 85%, 95% 100%, 0 100%, 0 15%);
+        transition: .3s all ease;
+        z-index: -1;
+
+        &_297 {
+            @include adaptiv-width(297, 150);
+            @include adaptiv-height(49, 30);
+            @media(max-width: $breakpoint-575) {
+                left: -8px;
+            }
+        }
+
+        &_414 {
+            @include adaptiv-width(414, 150);
+            @include adaptiv-height(68, 40);
+            @media(max-width: $breakpoint-1399) {
+                left: -9px;
+            }
+            @media(max-width: $breakpoint-991) {
+                left: -8px;
+            }
+            @media(max-width: $breakpoint-767) {
+                left: -7px;
+            }
+            @media(max-width: $breakpoint-575) {
+                left: -6px;
+            }
+        }
+
+        &_green {
+            background-color: $main-color;
+        }
+
+        &_white {
+            background-color: $white;
+        }
+        
+    }
+}
+//END BUTTON
+
+//CONTAINERS
+
+
+
+//SECTION TITLE
+
+.section-title {
+    @include adaptiv-font(64, 40);
+    font-family: 'Bebas Neue';
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 10px;
+}
+
+//END SECTION TITLE
+
+//BACKGROUND FOR SECTIONS
+
+.bg-section {
+    width: 100%;
+    height: 85%;
+
+    clip-path: polygon(7% 0, 100% 0, 100% 78%, 93% 100%, 0 100%, 0 22%);
+    position: absolute;
+    z-index: -1;
+
+    &_white {
+        background-color: $bg-white;
+    }
+
+    &_green {
+        background-color: $main-color;
+    }
+}
+
+//END BACKGROUND FOR SECTIONS
+
+//CAROUSEL COMMON
+
+.carousel-title {
+    @include adaptiv-font(42, 20);
+    font-family: 'Bebas Neue';
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.carousel-common {
+    overflow: hidden;
+
+    &__wrapper {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 10px;
+    }
+    &__slide {
+        @include adaptiv-width(522, 300);
+        max-height: 194px;
+        filter: drop-shadow(4px 4px 4px rgba(#000, .1));
+        flex: 0 0 auto;
+    }
+    &__btns {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 8px;
+        margin: 10px 80px 0 0;
+    }
+    &__next {
+        transform: rotate(180deg);
+    }
+}
+
+.carousel-common-slide {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        clip-path: polygon(0 0, 92% 0, 100% 23%, 100% 100%, 0 100%, 0% 50%);
+        padding: 6px 6px 6px 30px;
+        background-color: $white;
+        height: 100%;
+        @media(max-width: $breakpoint-991) {
+            padding: 6px 6px 6px 20px;
+        }
+    }
+    &__descr {
+        text-align: center;
+        padding-right: 40px;
+        @media(max-width: $breakpoint-991) {
+            padding-right: 20px;
+        }
+    }
+    &__title {
+        @include adaptiv-font(18, 12);
+        font-weight: 700;
+    }
+
+    &__text {
+        @include adaptiv-font(14, 10);
+        font-weight: 500;
+    }
+
+    &__img {
+        @include adaptiv-flexBasis(181, 100);
+        flex-grow: 0;
+        flex-shrink: 0;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.carousel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: $bg-white;
+    transition: .3s all ease;
+    cursor: pointer;
+    &:hover {
+        background-color: darken($bg-white, 10%);
+    }
+}
+
+//END CAROUSEL COMMON
+
+//NAVLINK
+
+.navlink-common {
+    &__item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        &_active {
+            position: relative;
+            padding: 8px 30px;
+            background-color: $main-color;
+            clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+
+            .navlink-common__link {
+                position: relative;
+                color: $white !important;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: -12px;
+                    transform: translateY(-50%);
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 100%;
+                    background-color: $white;
+                }
+            }
+        }
+
+        &:hover {
+            .navlink-common__link {
+                transition: .3s all ease;
+                color: $main-color;
+            }
+        }
+    }
+    &__link {
+        font-size: 13px;
+    }
+}
+
+
+//END NAVLINK

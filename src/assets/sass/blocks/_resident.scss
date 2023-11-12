@@ -1,0 +1,20 @@
+.resident {
+    margin-top: 200px;
+    @media(max-width: $breakpoint-991) {
+        margin-top: 110px;
+    }
+    &__wrapper {
+        padding-left: 80px;
+        @media(max-width: $breakpoint-991) {
+            padding-left: 40px;
+        }
+        @media(max-width: $breakpoint-575) {
+            padding-left: 20px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 70px;
+    }
+
+}
