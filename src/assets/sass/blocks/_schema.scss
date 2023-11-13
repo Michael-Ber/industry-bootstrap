@@ -16,27 +16,31 @@
     }
 
     &__img-wrapper {
-        
+
         position: relative;
-        
+
         #path {
             cursor: pointer;
         }
     }
+
     &__img-subwrapper {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: 0 10px;
     }
+
     &__img {
         position: relative;
         flex: 1 0 auto;
         max-width: 1158px;
         max-height: 480px;
+
         svg {
             max-width: 1158px;
             max-height: 480px;
+
             path {
                 &:nth-child(28) {
                     cursor: pointer;
@@ -78,12 +82,13 @@
         &_active {
             opacity: 1;
         }
+
         img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-       
+
     }
 }
 
@@ -92,25 +97,25 @@
 }
 
 .dialog-schema {
-    @include adaptiv-width(306, 170);
     @include adaptiv-font(14, 10);
-    @include adaptiv-height(293, 180);
     position: absolute;
     bottom: 75%;
     right: -5%;
     background-color: $white;
     font-weight: 400;
-    color: $black;
     box-shadow: 16px 16px 48px 0 rgba(#000, .1);
     opacity: 0;
     transition: .3s opacity ease;
+
     @media(max-width: $breakpoint-1399) {
         right: 0;
     }
+
     @media(max-width: $breakpoint-575) {
         bottom: 85%;
     }
-    &_active {  
+
+    &_active {
         opacity: 1;
     }
 
@@ -124,23 +129,26 @@
         font-weight: 500;
         color: $white;
     }
+
     &__content {
         padding: 0 15px 35px 15px;
-        @media(max-width: $breakpoint-575) {
-            padding: 0 0 0 10px;
-        }
+
     }
+
     &__list {
         list-style-type: none;
         margin-top: 30px;
+
         @media(max-width: $breakpoint-991) {
             margin-top: 15px;
         }
+
         @media(max-width: $breakpoint-575) {
             margin-top: 7px;
         }
 
     }
+
     &__item {
         display: flex;
         justify-content: flex-start;
@@ -163,6 +171,7 @@
 
     &__descr {
         margin-top: 15px;
+
         @media(max-width: $breakpoint-991) {
             margin-top: 10px;
         }

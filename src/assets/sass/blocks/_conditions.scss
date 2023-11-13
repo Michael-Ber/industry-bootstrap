@@ -1,27 +1,30 @@
 .conditions {
     margin-top: 200px;
+
     @media(max-width: $breakpoint-991) {
         margin-top: 110px;
     }
+
     &__wrapper {
         margin-top: 100px;
         padding: 0 10px;
+
         @media(max-width: $breakpoint-767) {
             margin-top: 50px;
         }
     }
 
     &__timeline {
-        @include adaptiv-columns(420, 300, 3);
-        display: grid;
+        // @include adaptiv-columns(420, 300, 3);
+        // display: grid;
         justify-content: center;
         row-gap: 130px;
-        
-        @media(max-width: $breakpoint-1199) {
-            @include adaptiv-columns(420, 300, 2);
-        }
+
+        // @media(max-width: $breakpoint-1199) {
+        //     @include adaptiv-columns(420, 300, 2);
+        // }
         @media(max-width: $breakpoint-767) {
-            @include adaptiv-columns(420, 300, 1);
+            // @include adaptiv-columns(420, 300, 1);
             row-gap: 80px;
         }
     }
@@ -31,18 +34,23 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+
     &__top {
         position: relative;
         order: 1;
+
         @media(max-width: $breakpoint-767) {
             order: 2;
             margin: 0 auto;
         }
     }
+
     &__bottom {
         order: 2;
+
         @media(max-width: $breakpoint-767) {
             order: 1;
+            text-align: center;
         }
     }
 
@@ -57,6 +65,7 @@
         justify-content: center;
         align-items: center;
         border: 2px solid $main-color;
+
         @media(max-width: $breakpoint-767) {
             margin-bottom: 0;
         }
@@ -69,6 +78,7 @@
         width: calc(100% - 60px);
         height: 2px;
         background-color: $main-color;
+
         @media(max-width: $breakpoint-767) {
             top: 100%;
             left: 50%;
@@ -76,8 +86,9 @@
             width: 2px;
             bottom: 30px;
         }
-        
+
     }
+
     &__title {
         @include adaptiv-font(20, 14);
         font-weight: 700;
@@ -89,67 +100,94 @@
         padding-right: 10px;
     }
 
-    #line-1, #line-2, #line-3, #line-4, #line-5 {
+    #line-1,
+    #line-2,
+    #line-3,
+    #line-4,
+    #line-5 {
+
         &::after,
         &::before {
             content: '';
             position: absolute;
-            right: 0;
+            right: -1px;
             display: none;
-            width: 10px;
+            width: 7px;
             height: 2px;
             background-color: $main-color;
         }
 
         &::after {
             transform: rotate(45deg);
-            top: -4px;
+            top: -2px;
+            border-top-right-radius: 1px;
+
             @media(max-width: $breakpoint-767) {
-                top: 93%;
-                left: -7px;
+                top: 94%;
+                left: -5px;
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 1px;
             }
         }
 
         &::before {
             transform: rotate(-45deg);
-            top: 4px;
+            top: 2px;
+            border-bottom-right-radius: 1px;
+
             @media(max-width: $breakpoint-767) {
-                top: 93%;
-                left: -1px;
+                top: 94%;
+                left: 0px;
+                border-bottom-right-radius: 0px;
+                border-bottom-left-radius: 1px;
             }
         }
     }
-    #line-3, #line-5 {
+
+    #line-3,
+    #line-5 {
+
         &::after,
         &::before {
             display: block;
         }
     }
-    
+
     @media(max-width: $breakpoint-1199) {
         #line-3 {
+
             &::after,
             &::before {
                 display: none;
             }
-            
+
         }
-        #line-2, #line-4 {
+
+        #line-2,
+        #line-4 {
+
             &::after,
             &::before {
                 display: block;
             }
         }
     }
+
     @media(max-width: $breakpoint-767) {
-        #line-1, #line-2, #line-3, #line-4, #line-5 {
+
+        #line-1,
+        #line-2,
+        #line-3,
+        #line-4,
+        #line-5 {
+
             &::after,
             &::before {
                 display: block;
             }
         }
     }
-    
+
 }
 
 .item-timeline-conditions-include {
@@ -161,6 +199,7 @@
         padding: 34px 46px 55px 27px;
         background-color: $main-color;
         clip-path: polygon(7% 0, 100% 0, 100% 84%, 93% 100%, 0 100%, 0 16%);
+
         @media(max-width: $breakpoint-767) {
             margin-top: 0;
         }
@@ -182,28 +221,29 @@
     &__bottom {
         position: relative;
         margin-top: -7%;
-        margin-left: 15px;
+        margin-left: 8px;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 20px;
+
         @media(max-width: $breakpoint-991) {
             gap: 10px;
-            margin-left: 10px;
         }
+
+
     }
 
     &__link {
         font-size: 12px;
         font-weight: 500;
         text-align: center;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        text-decoration: underline;
     }
+
     &__room {
         @include adaptiv-minwidth(215, 160);
+
         img {
             width: 100%;
             height: 100%;

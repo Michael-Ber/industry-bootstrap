@@ -15,7 +15,7 @@
         top: 150px;
         left: 0;
 
-        
+
         @media(max-width: $breakpoint-767) {
             clip-path: unset !important;
             height: calc(100% + 20px) !important;
@@ -26,6 +26,7 @@
     &__wrapper {
         padding: 0 10px;
         margin-top: 70px;
+
         @media(max-width: $breakpoint-575) {
             margin-top: 40px;
         }
@@ -51,37 +52,37 @@
     &__subtitle {
         margin-top: 37px;
         text-align: center;
+
         @media(max-width: $breakpoint-575) {
             margin-top: 20px;
         }
     }
 
     &__grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(300px, 522px));
-        gap: 20px;
-        justify-content: center;
-        
-
+        row-gap: 20px;
+        align-items: stretch;
 
         @media(max-width: $breakpoint-767) {
-            grid-template-columns: minmax(300px, 522px);
+            justify-content: center;
         }
 
-        @media(max-width: $breakpoint-575) {
-            padding: 0 20px;
-        }
+
     }
 
     &__card {
         position: relative;
         box-shadow: 16px 16px 48px 0 rgba(#000, .1);
-        padding: 0px 20px 0px 80px;
+        padding: 0px 30px 0px 75px;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        height: 138px;
+        min-height: 138px;
         background-color: $white;
+
+        @media(max-width: $breakpoint-767) {
+            padding: 0px 20px 0px 75px;
+        }
+
         &:nth-child(1) {
             order: 1;
         }
@@ -129,7 +130,7 @@
 
     &__btn {
         @include adaptiv-font(16, 12);
-        @include adaptiv-width(522, 300);
+        max-width: 492px;
         line-height: 20px;
         display: block;
         margin: 0 auto;
@@ -169,5 +170,10 @@
     &__text {
         @include adaptiv-font(16, 12);
         font-weight: 500;
+        margin-left: 33px;
+
+        @media(max-width: $breakpoint-767) {
+            margin-left: 5px;
+        }
     }
 }
