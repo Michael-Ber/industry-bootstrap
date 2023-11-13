@@ -1,7 +1,7 @@
+@import './var/variables';
 @import './libs/fonts';
 @import './blocks/header';
 @import './blocks/intro';
-@import './var/variables';
 @import './blocks/park';
 @import './blocks/advantages';
 @import './blocks/infra';
@@ -38,6 +38,10 @@ a {
     color: $black;
 }
 
+p {
+    margin: 0;
+}
+
 //END COMMON
 
 //CONTAINERS
@@ -48,10 +52,11 @@ a {
 }
 
 .container {
-    @media(max-width: $breakpoint-991) {
+    @media(max-width: $breakpoint-1299) {
         max-width: 100%;
         padding: 0 30px;
     }
+
     @media(max-width: $breakpoint-575) {
         padding: 0 10px;
     }
@@ -65,6 +70,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+
     &__subwrapper {
         position: relative;
         display: flex;
@@ -135,6 +141,7 @@ a {
         &_297 {
             @include adaptiv-width(297, 150);
             @include adaptiv-height(49, 30);
+
             @media(max-width: $breakpoint-575) {
                 left: -8px;
             }
@@ -143,15 +150,19 @@ a {
         &_414 {
             @include adaptiv-width(414, 150);
             @include adaptiv-height(68, 40);
+
             @media(max-width: $breakpoint-1399) {
                 left: -9px;
             }
+
             @media(max-width: $breakpoint-991) {
                 left: -8px;
             }
+
             @media(max-width: $breakpoint-767) {
                 left: -7px;
             }
+
             @media(max-width: $breakpoint-575) {
                 left: -6px;
             }
@@ -164,9 +175,10 @@ a {
         &_white {
             background-color: $white;
         }
-        
+
     }
 }
+
 //END BUTTON
 
 //CONTAINERS
@@ -227,12 +239,14 @@ a {
         gap: 20px;
         padding: 10px;
     }
+
     &__slide {
         @include adaptiv-width(522, 300);
         max-height: 194px;
         filter: drop-shadow(4px 4px 4px rgba(#000, .1));
         flex: 0 0 auto;
     }
+
     &__btns {
         display: flex;
         justify-content: flex-end;
@@ -240,6 +254,7 @@ a {
         gap: 8px;
         margin: 10px 80px 0 0;
     }
+
     &__next {
         transform: rotate(180deg);
     }
@@ -254,17 +269,21 @@ a {
         padding: 6px 6px 6px 30px;
         background-color: $white;
         height: 100%;
+
         @media(max-width: $breakpoint-991) {
             padding: 6px 6px 6px 20px;
         }
     }
+
     &__descr {
         text-align: center;
         padding-right: 40px;
+
         @media(max-width: $breakpoint-991) {
             padding-right: 20px;
         }
     }
+
     &__title {
         @include adaptiv-font(18, 12);
         font-weight: 700;
@@ -279,6 +298,7 @@ a {
         @include adaptiv-flexBasis(181, 100);
         flex-grow: 0;
         flex-shrink: 0;
+
         img {
             width: 100%;
             height: 100%;
@@ -296,6 +316,7 @@ a {
     background-color: $bg-white;
     transition: .3s all ease;
     cursor: pointer;
+
     &:hover {
         background-color: darken($bg-white, 10%);
     }
@@ -311,7 +332,7 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
-        
+
 
         &_active {
             position: relative;
@@ -345,6 +366,7 @@ a {
             }
         }
     }
+
     &__link {
         font-size: 13px;
     }

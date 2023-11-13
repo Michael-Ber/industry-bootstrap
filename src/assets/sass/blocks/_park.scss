@@ -1,5 +1,3 @@
-@import '../var/variables';
-
 .park {
     position: relative;
     margin-top: 120px;
@@ -33,7 +31,7 @@
         align-items: center;
         box-shadow: 16px 16px 48px 0 rgba(#000, .1);
         padding: 20px 0;
-        
+
         &:nth-child(1) {
             top: -112px;
             left: 0px;
@@ -66,20 +64,21 @@
             top: unset !important;
             left: unset !important;
         }
+
         @media(max-width: $breakpoint-575) {
             width: 100% !important;
         }
     }
 
     &__billet-white {
-        width: calc(100%/3 - 13px);
+        width: min(413px, calc(100%/3 - 13px));
         min-height: 200px;
         background-color: $white;
+
         .billet-park {
             &__text {
                 @include adaptiv-font(15, 11);
                 font-weight: 500;
-                color: $black;
                 width: min(80%, 550px);
             }
         }
@@ -113,6 +112,7 @@
         position: relative;
         display: flex;
         justify-content: center;
+
         iframe {
             align-content: start;
             border: none;
@@ -133,5 +133,5 @@
         }
     }
 
-    
+
 }
