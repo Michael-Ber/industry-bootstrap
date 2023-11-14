@@ -5,7 +5,7 @@
     position: relative;
 
     &__title {
-        @include adaptiv-font(64, 17);
+        @include adaptiv-size("font-size", 64, 17);
         position: absolute;
         top: 45px;
         left: 50%;

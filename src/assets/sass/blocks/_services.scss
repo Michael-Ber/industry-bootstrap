@@ -40,7 +40,7 @@
     }
 
     &__img {
-        @include adaptiv-maxwidth(300, 200);
+        @include adaptiv-size("max-width", 300, 200);
 
         img {
             width: 100%;
@@ -129,7 +129,7 @@
     }
 
     &__btn {
-        @include adaptiv-font(16, 12);
+        @include adaptiv-size("font-size", 16, 12);
         max-width: 492px;
         line-height: 20px;
         display: block;
@@ -152,9 +152,9 @@
 .card-services {
 
     &__number {
-        @include adaptiv-font(48, 20);
-        @include adaptiv-width(75, 60);
-        @include adaptiv-height(75, 60);
+        @include adaptiv-size("font-size", 48, 20);
+        @include adaptiv-size("width", 75, 60);
+        @include adaptiv-size("height", 75, 60);
         font-family: 'Bebas Neue';
         display: flex;
         justify-content: center;
@@ -168,7 +168,7 @@
     }
 
     &__text {
-        @include adaptiv-font(16, 12);
+        @include adaptiv-size("font-size", 16, 12);
         font-weight: 500;
         margin-left: 33px;
 

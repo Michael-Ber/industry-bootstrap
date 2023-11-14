@@ -24,8 +24,8 @@ export const openCloseModal = () => {
         }
         function openModal() {
             modal.classList.add('modal_active');
-                body.style.overflow = 'hidden';
-                body.style.marginRight = removeTwitching() + 'px';
+            body.style.overflow = 'hidden';
+            body.style.marginRight = removeTwitching() + 'px';
         }
         function removeTwitching() {
             let div = document.createElement('div');

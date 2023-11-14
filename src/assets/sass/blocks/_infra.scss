@@ -97,19 +97,19 @@
     }
 
     &__metric {
-        @include adaptiv-font(22, 16);
+        @include adaptiv-size("font-size", 22, 16);
         font-weight: 900;
     }
 
     &__descr {
-        @include adaptiv-font(14, 12);
+        @include adaptiv-size("font-size", 14, 12);
         font-size: 14px;
         font-weight: 500;
         margin-top: 5px;
     }
 
     &__text {
-        @include adaptiv-font(12, 11);
+        @include adaptiv-size("font-size", 12, 11);
         font-weight: 400;
         margin-top: 5px;
     }

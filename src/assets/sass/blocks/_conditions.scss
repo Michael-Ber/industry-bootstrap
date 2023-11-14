@@ -15,16 +15,10 @@
     }
 
     &__timeline {
-        // @include adaptiv-columns(420, 300, 3);
-        // display: grid;
         justify-content: center;
         row-gap: 130px;
 
-        // @media(max-width: $breakpoint-1199) {
-        //     @include adaptiv-columns(420, 300, 2);
-        // }
         @media(max-width: $breakpoint-767) {
-            // @include adaptiv-columns(420, 300, 1);
             row-gap: 80px;
         }
     }
@@ -55,7 +49,7 @@
     }
 
     &__chain {
-        @include adaptiv-font(32, 20);
+        @include adaptiv-size("font-size", 32, 20);
         font-family: 'Bebas Neue';
         font-weight: 700;
         color: $main-color;
@@ -90,12 +84,12 @@
     }
 
     &__title {
-        @include adaptiv-font(20, 14);
+        @include adaptiv-size("font-size", 20, 14);
         font-weight: 700;
     }
 
     &__descr {
-        @include adaptiv-font(16, 12);
+        @include adaptiv-size("font-size", 16, 12);
         font-weight: 500;
         padding-right: 10px;
     }
@@ -206,13 +200,13 @@
     }
 
     &__title {
-        @include adaptiv-font(20, 14);
+        @include adaptiv-size("font-size", 20, 14);
         font-weight: 700;
         color: $white;
     }
 
     &__descr {
-        @include adaptiv-font(16, 12);
+        @include adaptiv-size("font-size", 16, 12);
         font-weight: 500;
         color: $white;
         margin-top: 13px;
@@ -242,7 +236,7 @@
     }
 
     &__room {
-        @include adaptiv-minwidth(215, 160);
+        @include adaptiv-size("min-width", 215, 160);
 
         img {
             width: 100%;

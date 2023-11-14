@@ -67,19 +67,19 @@
     }
 
     &__percent {
-        @include adaptiv-font(50, 22);
+        @include adaptiv-size("font-size", 50, 22);
         font-weight: 500;
     }
 
     &__descr {
-        @include adaptiv-font(16, 12);
+        @include adaptiv-size("font-size", 16, 12);
         font-weight: 500;
         margin-top: 5px;
     }
 
     &__icon-wrapper {
-        @include adaptiv-width(100, 75);
-        @include adaptiv-height(100, 75);
+        @include adaptiv-size("width", 100, 75);
+        @include adaptiv-size("height", 100, 75);
         display: flex;
         justify-content: center;
         align-items: center;

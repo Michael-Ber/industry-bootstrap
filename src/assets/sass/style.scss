@@ -1,4 +1,5 @@
 @import './var/variables';
+@import './var/mixins';
 @import './libs/fonts';
 @import './blocks/header';
 @import './blocks/intro';
@@ -79,13 +80,13 @@ p {
         filter: drop-shadow(0 4px 4px rgba(#000, 0.25));
 
         &_297 {
-            @include adaptiv-width(297, 150);
-            @include adaptiv-height(49, 30);
+            @include adaptiv-size("width", 297, 150);
+            @include adaptiv-size("height", 49, 30);
         }
 
         &_414 {
-            @include adaptiv-width(414, 150);
-            @include adaptiv-height(68, 40);
+            @include adaptiv-size("width", 414, 150);
+            @include adaptiv-size("height", 68, 40);
         }
 
     }
@@ -100,29 +101,25 @@ p {
         cursor: pointer;
 
         &_green {
-            @include adaptiv-font(20, 11);
+            @include adaptiv-size("font-size", 20, 11);
             background-color: $main-color;
             color: $white;
 
             &:hover {
-                background-color: darken($main-color, 10%);
-
-                &+.btn-wrapper__background {
-                    background-color: darken($white, 10%);
-                }
+                background-color: lighten($main-color, 10%);
             }
         }
 
         &_white {
-            @include adaptiv-font(18, 11);
+            @include adaptiv-size("font-size", 18, 11);
             background-color: $white;
             color: $main-color;
 
             &:hover {
-                background-color: darken($white, 10%);
+                color: lighten($main-color, 10%);
 
                 &+.btn-wrapper__background {
-                    background-color: darken($main-color, 10%);
+                    background-color: lighten($main-color, 10%);
                 }
             }
         }
@@ -139,8 +136,8 @@ p {
         z-index: -1;
 
         &_297 {
-            @include adaptiv-width(297, 150);
-            @include adaptiv-height(49, 30);
+            @include adaptiv-size("width", 297, 150);
+            @include adaptiv-size("height", 49, 30);
 
             @media(max-width: $breakpoint-575) {
                 left: -8px;
@@ -148,8 +145,8 @@ p {
         }
 
         &_414 {
-            @include adaptiv-width(414, 150);
-            @include adaptiv-height(68, 40);
+            @include adaptiv-size("width", 414, 150);
+            @include adaptiv-size("height", 68, 40);
 
             @media(max-width: $breakpoint-1399) {
                 left: -9px;
@@ -188,7 +185,7 @@ p {
 //SECTION TITLE
 
 .section-title {
-    @include adaptiv-font(64, 40);
+    @include adaptiv-size("font-size", 64, 40);
     font-family: 'Bebas Neue';
     font-weight: 900;
     text-transform: uppercase;
@@ -222,7 +219,7 @@ p {
 //CAROUSEL COMMON
 
 .carousel-title {
-    @include adaptiv-font(42, 20);
+    @include adaptiv-size("font-size", 42, 20);
     font-family: 'Bebas Neue';
     font-weight: 900;
     text-transform: uppercase;
@@ -241,7 +238,7 @@ p {
     }
 
     &__slide {
-        @include adaptiv-width(522, 300);
+        @include adaptiv-size("width", 522, 300);
         max-height: 194px;
         filter: drop-shadow(4px 4px 4px rgba(#000, .1));
         flex: 0 0 auto;
@@ -285,17 +282,17 @@ p {
     }
 
     &__title {
-        @include adaptiv-font(18, 12);
+        @include adaptiv-size("font-size", 18, 12);
         font-weight: 700;
     }
 
     &__text {
-        @include adaptiv-font(14, 10);
+        @include adaptiv-size("font-size", 14, 10);
         font-weight: 500;
     }
 
     &__img {
-        @include adaptiv-flexBasis(181, 100);
+        @include adaptiv-size("flex-basis", 181, 100);
         flex-grow: 0;
         flex-shrink: 0;
 

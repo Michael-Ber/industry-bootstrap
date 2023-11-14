@@ -63,7 +63,7 @@
     }
 
     &__mark {
-        @include adaptiv-width(45, 20);
+        @include adaptiv-size("width", 45, 20);
         opacity: 0;
         position: absolute;
         bottom: 50%;
@@ -97,7 +97,7 @@
 }
 
 .dialog-schema {
-    @include adaptiv-font(14, 10);
+    @include adaptiv-size("font-size", 14, 10);
     position: absolute;
     bottom: 75%;
     right: -5%;
@@ -120,7 +120,7 @@
     }
 
     &__header {
-        @include adaptiv-font(16, 10);
+        @include adaptiv-size("font-size", 16, 10);
         height: 60px;
         display: flex;
         justify-content: center;

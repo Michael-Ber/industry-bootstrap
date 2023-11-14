@@ -77,7 +77,7 @@
 
         .billet-park {
             &__text {
-                @include adaptiv-font(15, 11);
+                @include adaptiv-size("font-size", 15, 11);
                 font-weight: 500;
                 width: min(80%, 550px);
             }
@@ -95,7 +95,7 @@
         }
 
         .billet-park__text {
-            @include adaptiv-font(16, 12);
+            @include adaptiv-size("font-size", 16, 12);
             color: $white;
             font-weight: 700;
             width: min(80%, 550px);
